@@ -4,7 +4,8 @@ Simple website(https://maxsop.com/) convert to android app using webview.
 ### Enable internet 
 In AndroidManifest.xml
 ```xml
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>```
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+```
 
 ### Enable javascript 
 In MainActivity.java
@@ -13,7 +14,7 @@ WebSettings webSettings = webView.getSettings();
 webSettings.setJavaScriptEnabled(true);
 ```
 
-### Set webclint for manage events
+### Set webclint and manage events
 In MainActivity.java
 ```java
 webView.setWebViewClient(new WebViewClient());
