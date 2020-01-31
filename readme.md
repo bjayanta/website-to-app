@@ -33,6 +33,11 @@ In MainActivity.java (remove status bar)
 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 ```
 
+Transparent status bar
+```java
+getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+```
+
 ### Back press
 ```java
 @Override
@@ -44,3 +49,29 @@ public void onBackPressed() {
     }
 }
 ```
+
+### Sleep using Thread
+```java
+Thread thread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        try {
+            sleep(3000);
+
+            // new intent
+            Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+            startActivity(intent);
+
+            // kill the current activity
+            finish();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+});
+
+// run the thread
+thread.start();
+```
+
+Thanks.
