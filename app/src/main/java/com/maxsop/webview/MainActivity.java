@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         // set url
         webView.loadUrl("https://maxsop.com/");
+    }
 
+    @Override
+    public void onBackPressed() {
+        if(webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
