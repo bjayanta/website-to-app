@@ -36,11 +36,11 @@ getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.L
 ### Back press
 ```java
 @Override
-    public void onBackPressed() {
-        if(webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            super.onBackPressed();
-        }
+public void onBackPressed() {
+    if(webView.canGoBack()) {
+        webView.goBack();
+    } else {
+        super.onBackPressed();
     }
+}
 ```
